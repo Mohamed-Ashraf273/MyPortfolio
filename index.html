@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>Mohamed's Portfolio</title>
+    <script src="https://kit.fontawesome.com/8a1ba1839f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <nav>
+                <img src="images/Untitled (10).png" class="logo">
+                <ul>
+                  <li onclick="scrollToSection('header')"><a href="#">Home</a></li>
+                  <li onclick="scrollToSection('about')"><a href="#">About</a></li>
+                  <li onclick="scrollToSection('portfolio')"><a href="#">Portfolio</a></li>
+                  <li onclick="scrollToSection('name of id of the div contain the part I want')"><a href="#">Services</a></li>
+                  <li onclick="scrollToSection('name of id of the div contain the part I want')"><a href="#">Contacts</a></li>
+                </ul>
+              </nav>
+              <div class="header-text">
+                <p>Computer Engineer,</p>
+                <h1>I'm Mohamed Ashraf<br> From Egypt.</h1>
+              </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="a-co-1">
+                <h1 class="title">About Me</h1>
+                <p> My name is Mohamed Ashraf, I live in Cairo Egypt,
+                     I'm in my second year in the college<br> (Cairo 
+                     University-Faculty of Engineering Computer Dept.).
+                     My concentration is on the AI<br> and machine Learning 
+                     Tracks as I love Maths and Problem-Solving at the 
+                     same time.
+                </p>
+                <div class="tabTitle">
+                    <p class="links Firstone" onclick="openit('skills')">Skills</p>
+                    <p class="links" onclick="openit('experinace')">Experinace</p>
+                    <p class="links" onclick="openit('education')">Education</p>
+                </div>
+                <div class="t-contents firstab" id="skills">
+                    <ul>
+                        <li><span>Web Development</span><br>Design using React</li>
+                        <li><span>App Development</span><br>Design using React Native</li>
+                    </ul>
+                </div>
+                <div class="t-contents" id="experinace">
+                    <ul>
+                        <li><span>2023</span><br>Cairo University training (Web Dev.).</li>
+                        <li><span>2023</span><br>AI Zewail City Summer Training.</li>
+                    </ul>
+                </div>
+                <div class="t-contents" id="education">
+                    <ul>
+                        <li><span>2021-2026</span><br>Cairo University-Faculty of Engineering Computer Dept.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="portfolio">
+    <div class="container">
+        <h1 class="title">My Work</h1>
+       <div class="worklist">
+        <div class="work">
+            <img src="images/work4.png">
+            <div class="layer">
+                <h3>This Portfolio Website</h3>
+                <p>The Website talks about me and my achievements.</p>
+<a href="https://drive.google.com/drive/folders/1mAsRsCiuugz9UrI9741uMATjZlGWIDpJ?usp=sharing"><i  style="padding-top: 10px;" class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        <div class="work">
+            <img src="images/work2.png">
+            <div class="layer">
+                <h3>Logic Circuit Calculator</h3>
+                <p>Calculator does some arithmetic operations such as + , - , x , / (hardware).</p>
+                <a href="https://drive.google.com/drive/folders/1a0h7BMZNOZmgV1heQM-leNmt-tJQ2Tn8?usp=sharing"><i  style="padding-top: 10px;" class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+        <div class="work">
+            <img src="images/work5.png">
+            <div class="layer">
+                <h3>Banking System</h3>
+                <p>Banking system using python, does some operations.</p>
+                <a href="https://drive.google.com/drive/folders/119UyK2DArirNTaZVGpESogpWNAnmeNPP?usp=sharing"><i  style="padding-top: 10px;" class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+       </div>
+    </div>
+</div>
+    <script>
+        var tlinks=document.querySelectorAll('.links');
+        var tabcontents=document.querySelectorAll('.t-contents');
+        function openit(name){
+            for(tlink of tlinks){
+                tlink.classList.remove("Firstone");// we loop to remove any firstone in any exp or skills or edu as it must be at one of them during running
+            }
+            for(tabcontent of tabcontents){
+               tabcontent.classList.remove("firstab");// we loop to remove any firstab in any exp or skills or edu as it must be at one of them during running
+            }
+            //note:event.currentTarget. could onlu used at the line where function is called
+            event.currentTarget.classList.add("Firstone");//event.currentTarget==> gets what we clicked if skills or exp or edu and add that class to it
+            document.getElementById(name).classList.add("firstab");
+        }
+        function scrollToSection(idname) {
+            var element = document.getElementById(idname); // get the element to scroll to
+            // Scroll to the element's top position
+            element.scrollIntoView({ behavior: "smooth" });
+}
+    </script>
+</body>
+</html>
